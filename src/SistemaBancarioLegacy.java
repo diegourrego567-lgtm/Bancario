@@ -1,26 +1,22 @@
 import java.util.ArrayList;
 import java.util.Vector;
 public class SistemaBancarioLegacy {
-    public static void main(String[] args) {
-        
-        medirTiempoVector();
-        medirTiempoArrayList();
-    }
-    public static void medirTiempoVector(){
+
+    public static long  medirTiempoVector(){
         Vector<Integer>vector=new Vector<>();
 
         long inicio=System.currentTimeMillis();
 
-        for ( int i =0 ; i< 1000000;i++) {
+        for ( int i =0 ; i< 1_000_000;i++) {
             vector.add(i);
             
         }
         long fin=System.currentTimeMillis();
-        System.out.println("tiempo vector:"+(fin-inicio)+"ms");
+        return fin-inicio;
 
     }
 
-    public static void medirTiempoArrayList() {
+    public static long medirTiempoArrayList() {
 
         ArrayList<Integer>arrayList=new ArrayList<>();
 
@@ -33,7 +29,7 @@ public class SistemaBancarioLegacy {
     }
 
     long fin= System.currentTimeMillis();
-    System.out.println("tiempo ArrayList: "+ (fin-inicio)+ "ms");
+    return fin-inicio ;
 
 
     }
